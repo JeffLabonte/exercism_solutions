@@ -1,17 +1,21 @@
+fn is_divisible_by_x(x: u32, n:& u32) -> bool{
+    n % x == 0
+}
+
 pub fn raindrops(n: u32) -> String {
     let mut noises = String::new();
     let mut no_factor = true;
 
-    if n % 3 == 0 {
+    if is_divisible_by_x(3, &n) {
         no_factor = false;
         noises = format!("{}Pling", noises);
     }
-    if n % 5 == 0 {
+    if is_divisible_by_x(5, &n) {
         no_factor = false;
         noises = format!("{}Plang", noises);
     }
 
-    if n % 7 == 0 {
+    if is_divisible_by_x(7, &n) {
         no_factor = false;
        noises = format!("{}Plong", noises);
     }
